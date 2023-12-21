@@ -1,0 +1,36 @@
+<!-- class binding -->
+<h1 [class.red-text]='bool'>{{ title }}</h1>
+
+<!-- style binding -->
+<h1 [style.color]="bool ? 'pink' : 'blue'">style with dom
+</h1>
+
+<!-- event binding -->
+<button (click)="buttonClick()" >Click me</button>
+
+<!-- event filtering -->
+<input type="text" (keyup.enter)="onKeyup()">
+
+<!-- template variable -->
+<input type="text" (keyup.enter)="onKeyupTemp(username.value)" #username>
+
+<!-- two way data binding -->
+<input type="text" [(ngModel)]="userName" (keyup.enter)="onKeyupTwoWay()">
+
+<!-- String interpolation -->
+<h3>{{ 100+20-25 }}</h3>
+<h2>{{ parentMsg }}</h2>
+
+<!-- this following line will be compiled into property binding anyway -->
+<img src="{{imgUrl}}" alt="">
+<!-- Property binding -->
+<img [src]="imgUrl" alt="">
+
+<!-- data binding - parent child -->
+<app-post-list [fromPostParent] = 'postParentMessage'></app-post-list>
+<button (click)='sendMessage()'>Click</button>
+
+<!-- one-way Data Binding-->
+<input type="text" [value]="textValue" (keyup.enter)="onKeyupTwoWayBinding()">
+<!-- two-way Data Binding-->
+<input type="text" [(ngModel)]="textValue" (keyup.enter)="onKeyupTwoWayBinding()">

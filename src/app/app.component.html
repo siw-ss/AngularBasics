@@ -1,0 +1,12 @@
+<h1>Angular Course</h1>
+
+<h1>Part 6 - ANGULAR ROUTING</h1>
+<button routerLink="/" routerLinkActive="active">Home - routing</button>
+<button routerLink="/part-one" routerLinkActive="active">Part 1 - parent child & exercise</button>
+<button routerLink="/part-two" routerLinkActive="active">Part 2 - directives & exercise</button>
+<button routerLink="/part-three" routerLinkActive="active">Part 3 - pipes</button>
+<button routerLink="/part-four" routerLinkActive="active" [queryParams]= "{ page:1, orderBy:'newest' }">Part 4 - services & modules</button>
+<button routerLink="/products" routerLinkActive="active" [queryParams]= "{ page:1, orderBy:'newest' }">Products</button>
+<button routerLink="/part-five" routerLinkActive="active">Part 5 - forms & validators</button>
+
+<router-outlet></router-outlet>

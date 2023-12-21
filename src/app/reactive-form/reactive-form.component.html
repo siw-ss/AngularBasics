@@ -1,0 +1,97 @@
+<div class="container mt-5">
+    <div class="form-area">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label >First Name </label>
+                <input
+                type="text"
+                placeholder="Full name"
+                class="form-control"
+                name="fullName"
+                formControlName = 'fullName'
+                >
+                <div class="alert alert-danger" *ngIf ="fullname.touched && fullname.invalid">
+                    <div *ngIf = "fullname.errors?.['required']">
+                        Full Name is required..
+                    </div>
+                    <div *ngIf = "fullname.errors?.['minlength']">
+                        Full Name must be at least 5 characters..
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label >Email </label>
+                <input
+                type="text"
+                placeholder="Email"
+                class="form-control"
+                name="email"
+                formControlName = 'email'
+                >
+                <div class="alert alert-danger" *ngIf ="email.touched && email.invalid">
+                    <div *ngIf = "email.errors?.['required']">
+                        Email is required..
+                    </div>
+                    <!-- <div *ngIf = "email.errors?.['pattern']">
+                        Invalid Email..
+                    </div> -->
+                    <div *ngIf = "email.errors?.['email']">
+                        Invalid Email..
+                    </div>
+                </div>
+            </div>
+            <!-- CONTACT DETAILS NESTED GROUPS -->
+            <div formGroupName = 'contactDetails' >
+                <div class="form-group">
+                    <label >Adress </label>
+                    <textarea
+                    cols="30" rows="5"
+                    placeholder="Adress"
+                    class="form-control"
+                    name="adress"
+                    formControlName = 'adress'
+                    ></textarea>
+                    <div class="alert alert-danger" *ngIf ="adress.touched && adress.invalid">
+                        <div *ngIf = "adress.errors?.['required']">
+                            Adress is required..
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label >Shipping Adress </label>
+                    <textarea
+                    cols="30" rows="5"
+                    placeholder="Shipping Adress"
+                    class="form-control"
+                    name="shippingAdress"
+                    formControlName = 'shippingAdress'
+                    ></textarea>
+                    <div class="alert alert-danger" *ngIf ="ShippingAdress.touched && ShippingAdress.invalid">
+                        <div *ngIf = "ShippingAdress.errors?.['required']">
+                            Shipping Adress is required..
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label >contact No </label>
+                    <input
+                    type="text"
+                    placeholder="789 Contact number"
+                    class="form-control"
+                    name="contactNo"
+                    formControlName = 'contactNo'
+                    >
+                    <div class="alert alert-danger" *ngIf ="ContactNo.touched && ContactNo.invalid">
+                        <div *ngIf = "ContactNo.errors?.['required']">
+                            Contact No is required..
+                        </div>
+                        <div *ngIf = "ContactNo.errors?.['pattern']">
+                            Invalid contact ..
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Submit</button>
+        </form>
+    </div>
+</div>

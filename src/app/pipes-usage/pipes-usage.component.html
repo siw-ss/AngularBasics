@@ -1,0 +1,41 @@
+<div class="inbuilt-pipes">
+    <h4> {{title | uppercase }} </h4>
+    <h4> {{title | lowercase }} </h4>
+    <h4> {{count | number }} </h4>
+    <br>
+
+    <!-- decimal value -->
+    <h4> {{dcValue | number }} </h4>
+    <!-- decimal value with 2 min and 2 max after the comma -->
+    <h4> {{dcValue | number: '1.2-2' }} </h4>
+    <!-- currency (google currency codes if needed)-->
+    <h4>{{price | currency: 'CAD':false : '2.1-1' }} </h4>
+    <h4>{{price | currency: 'JPY' }} </h4>
+    <br>
+
+    <!-- date -->
+    <h4>{{today | date: 'short'}} </h4>
+    <h4>{{today | date: 'shortDate'}} </h4>
+    <h4>{{today | date: 'shortTime'}} </h4>
+    <br>
+
+    <!-- json -->
+    <h4>{{postObj | json }} </h4>
+    <br>
+
+    <!-- percentage -->
+    <h4>{{0.567 | percent }} </h4>
+    <h4>{{ 5 | percent:'1.1-1' }} </h4>
+    <br>
+
+    <!-- slice -->
+    <h4>{{postArray | slice: 2:5}} </h4>
+</div>
+
+<div class="custom-pipes">
+    <h4>{{userDetails.city | append}} </h4>
+    <h4>{{userDetails.city | appendCLI}} </h4>
+    <br>
+    <!-- with arguments -->
+    <h4>{{dummyText | summary:50 }} </h4>
+</div>

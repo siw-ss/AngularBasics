@@ -1,0 +1,7 @@
+<h1>Part 1 - Exercice </h1>
+<app-post-form></app-post-form>
+
+<h1>Part 1 - ANGULAR PARENT CHILD COMM</h1>
+<app-post [parentMsg] = 'parentMessage' (messageEvent)='receiveMessage($event)'></app-post>
+<p>{{messageRecievedFromChild}}</p>
+<p>{{ fromChildOutput }}</p>

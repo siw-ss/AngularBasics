@@ -1,0 +1,51 @@
+<!-- NG FOR -->
+<ul>
+    <li *ngFor="let post of postArray"> {{post}} </li>
+</ul>
+
+<!-- NG IF -->
+<button (click)="addNew()">Add new Data </button>
+
+<div *ngIf="objArray.length > 0 then postList else noData"></div>
+
+<ng-template #noData>
+    <p>There's no Data to fetch...</p>
+</ng-template>
+
+<ng-template #postList >
+    <ul>
+        <li *ngFor="let post of objArray; let i =index">
+            {{ post.postTitle }}
+            <button (click)="delete(i)">delete</button>
+        </li>
+    </ul>
+</ng-template>
+
+<!-- NG SWITCH -->
+<div>
+    <button (click)="onClick('step 1')">Step 1</button>
+    <button (click)="onClick('step 2')">Step 2</button>
+    <button (click)="onClick('step 3')">Step 3</button>
+</div>
+<div [ngSwitch]="stepForm">
+    <div *ngSwitchCase=" 'step 1' ">Step 1 Form</div>
+    <div *ngSwitchCase=" 'step 2' ">Step 2 Form </div>
+    <div *ngSwitchCase=" 'step 3' ">Step 3 Form </div>
+    <div *ngSwitchDefault> default </div>
+</div>
+
+<!-- NG STYLE -->
+<h2 [ngStyle]="{
+    color : isActive? 'red':'blue',
+    textTransform : isActive? 'uppercase' : 'lowercase'
+}">
+    TESTING NG STYLE
+</h2>
+
+<!-- NG CLASS -->
+<h2 [ngClass]="{
+    'main' : isActive,
+    'text-weight' : isActive
+}">
+    TESTING NG CLASS
+</h2>

@@ -1,0 +1,20 @@
+<!-- input -->
+<div class="post-form">
+<h1>Post Form</h1>
+<input type="text" [(ngModel)]="postTitle" placeholder="Post Title">
+<br>
+<textarea cols="30" [(ngModel)]="postDetails" placeholder="Post Details"></textarea>
+<br>
+<input type="text" [(ngModel)]="postImg" placeholder="Post Image Url">
+<br>
+<input type="text" [(ngModel)]="postUrl" placeholder="Post Url">
+<br>
+<input class="check" type="checkbox" [(ngModel)]="backg">Add Background
+</div>
+<!-- DISPLAY REAL TIME-->
+<div class="post-form">
+<img [src]="postImg" alt="">
+<h2> <span [class.add-background]="backg">{{postTitle}}</span></h2>
+<p>{{postDetails}}</p>
+<a [style.display]="postUrl?'block':'none'" [href]="postUrl" target="_blank"> check link </a>
+</div>

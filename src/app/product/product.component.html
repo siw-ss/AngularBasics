@@ -1,0 +1,10 @@
+<div class="container">
+<button class="btn btn-warning m-2 " (click)="addNewData()">Add new</button>
+<ul>
+    <li *ngFor="let product of products; let index=index">
+        {{product.productTitle}}
+        <button class="btn btn-primary m-2" [routerLink]="['/single-product', index, product.productTitle]">View content</button>
+        <button class="btn btn-danger" (click)="delete(index)">x</button>
+    </li>
+</ul>
+</div>
